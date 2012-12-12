@@ -51,7 +51,14 @@ var Palette = Class.extend({
 	loadAvailableBrushes: function(){
 		for (var b in BRUSH_INCLUDES){
 			if (b > 0 && BRUSH_INCLUDES.hasOwnProperty(b)){
-				$.getScript("src/brushes/" + BRUSH_INCLUDES[b] + ".js");
+				var a = "src/brushes/" + BRUSH_INCLUDES[b] + ".js";
+				/*
+						*/
+				$.getScript(a,
+						$.proxy(function(){
+							this.t.onBrushLoad(this.b)
+						},{t:this,b:BRUSH_INCLUDES[b]}));
+				//$.getScript(a);
 			}
 		}
 	},
