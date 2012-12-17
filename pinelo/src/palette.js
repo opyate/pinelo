@@ -2,6 +2,9 @@
  * palette.js 
  * The palette. Includes the brush collection, and methods to extend it. Contains hooks for mouse events.
  */
+String.prototype.endsWith = function(suffix) {
+	return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 var Palette = Class.extend({
 	brushset: {},
@@ -51,7 +54,8 @@ var Palette = Class.extend({
 	loadAvailableBrushes: function(){
 		for (var b in BRUSH_INCLUDES){
 			if (b > 0 && BRUSH_INCLUDES.hasOwnProperty(b)){
-				var a = "src/brushes/" + BRUSH_INCLUDES[b] + ".js";
+				if (SCRIPTLOC && !SCRIPTLOC.endsWith('/')) { SCRIPTLOC = SCRIPTLOC + '/'; }
+				var a = SCRIPTLOC + "src/brushes/" + BRUSH_INCLUDES[b] + ".js";
 				/*
 						*/
 				$.getScript(a,

@@ -1,21 +1,23 @@
 <!doctype html>
 <html>
 <head>
-	<link rel="stylesheet" href="css/jquery-ui-1.8.4.custom.css" type="text/css" />
-	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<title>opyate XMAS hack 2012</title>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css" />
+	<style type="text/css">canvas{position: absolute;left:0;}</style>
 </head>
 <body>
-	<div id="background-canvas" style="width:100%; height:100%;"></div>
+	<div id="background-canvas"></div>
 
-	<script type="text/javascript" src="lib/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/jquery-ui-1.8.4.custom.min.js"></script>
-	<script src="https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 	<script src="libre.js"></script>
 	<script type="text/javascript" src="mouse.js"></script>
 	<script type="text/javascript">
 		// tell Pinelo which brush to use
 		var BRUSH_INCLUDES = ["simple", "arc"];
-		var THEWORD = "snoogums";
+		var THEWORD = "placeholder";
+		var SCRIPTLOC = "";
 	</script>
 	<script type="text/javascript" src="src/inheritance.js"></script>
 	<script type="text/javascript" src="src/util.js"></script>
